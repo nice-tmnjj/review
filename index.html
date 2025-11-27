@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nice Vision Optic Johor Jaya - 好评页面</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+    .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #333; margin-bottom: 20px; }
+    .review-text { background: #f1f1f1; padding: 10px; border-radius: 5px; margin-bottom: 5px; }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px; /* 左右留白 */
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 15px; /* 按钮下方空行 */
+    }
+    button:hover { background-color: #45a049; }
+    .review-item { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>感谢您光临 Nice Vision Optic Johor Jaya ❤️</h1>
+    <p>请选择一句好评并复制，然后点击按钮去 Google 留评价 📝</p>
+
+    <!-- 好评列表 -->
+    <div class="review-item">
+      <div class="review-text" id="r1">服务非常专业，验光耐心又仔细，体验很满意！</div>
+      <button onclick="copyAndGo('r1')">复制并去 Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r2">员工态度友善，让人感到舒适，会推荐朋友来！</div>
+      <button onclick="copyAndGo('r2')">复制并去 Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r3">店里环境干净整洁，体验很棒！</div>
+      <button onclick="copyAndGo('r3')">复制并去 Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r4">眼镜质量很好，镜片清晰，佩戴舒适！</div>
+      <button onclick="copyAndGo('r4')">复制并去 Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r5">款式选择多，质量出色，价格合理！</div>
+      <button onclick="copyAndGo('r5')">复制并去 Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r6">整体体验非常好，下次还会再来！</div>
+      <button onclick="copyAndGo('r6')">复制并去 Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r7">专业可靠，价格公道，值得信赖！</div>
+      <button onclick="copyAndGo('r7')">复制并去 Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r8">检测仪器先进，验光精准，体验顺畅！</div>
+      <button onclick="copyAndGo('r8')">复制并去 Google Review ✅</button>
+    </div>
+
+    <!-- 英文好评 -->
+    <div class="review-item">
+      <div class="review-text" id="r9">The service was very professional; the eye examination was thorough and patient.</div>
+      <button onclick="copyAndGo('r9')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r10">Staff were friendly and made me feel comfortable. Will recommend to friends!</div>
+      <button onclick="copyAndGo('r10')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r11">The store is clean and tidy; overall experience was excellent!</div>
+      <button onclick="copyAndGo('r11')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r12">Glasses quality is great, lenses are clear, very comfortable to wear!</div>
+      <button onclick="copyAndGo('r12')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r13">Wide selection of frames, excellent quality, reasonable price!</div>
+      <button onclick="copyAndGo('r13')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r14">Overall experience was excellent; will come back next time!</div>
+      <button onclick="copyAndGo('r14')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r15">Professional and reliable, fair pricing, highly trustworthy!</div>
+      <button onclick="copyAndGo('r15')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r16">Advanced equipment and precise eye examination made the process smooth!</div>
+      <button onclick="copyAndGo('r16')">Copy & Go Google Review ✅</button>
+    </div>
+
+    <!-- 马来文好评 -->
+    <div class="review-item">
+      <div class="review-text" id="r17">Perkhidmatan sangat profesional, pemeriksaan mata teliti dan memuaskan!</div>
+      <button onclick="copyAndGo('r17')">Salin & Pergi Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r18">Kakitangan mesra dan membuat saya selesa, akan cadangkan kepada rakan!</div>
+      <button onclick="copyAndGo('r18')">Salin & Pergi Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r19">Kedai bersih dan teratur, pengalaman sangat baik!</div>
+      <button onclick="copyAndGo('r19')">Salin & Pergi Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r20">Kualiti cermin mata bagus, lensa jelas dan selesa dipakai!</div>
+      <button onclick="copyAndGo('r20')">Salin & Pergi Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r21">Pilihan bingkai banyak, kualiti cemerlang, harga berpatutan!</div>
+      <button onclick="copyAndGo('r21')">Salin & Pergi Google Review ✅</button>
+    </div>
+
+    <div class="review-item">
+      <div class="review-text" id="r22">Pengalaman keseluruhan melebihi jangkaan, sangat berpuas hati!</div>
+      <button onclick="copyAndGo('r22')">Salin & Pergi Google Review ✅</button>
+    </div>
+
+  </div>
+
+  <script>
+    function copyAndGo(id) {
+      var text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        window.location.href = "https://g.page/r/CWQ6oS4buVX2EAE/review";
+      }).catch(function(err){
+        alert('复制失败，请手动复制');
+        window.location.href = "https://g.page/r/CWQ6oS4buVX2EAE/review";
+      });
+    }
+  </script>
+</body>
+</html>
