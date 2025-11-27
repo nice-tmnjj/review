@@ -1,219 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nice Vision Review</title>
+<title>Nice Vision Optic - Review Helper</title>
+
 <style>
     body {
         font-family: Arial, sans-serif;
         padding: 20px;
+        background: #f5f5f5;
         line-height: 1.7;
-        background: #f9fafb;
     }
 
     h2 {
         text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .review-block {
         margin-bottom: 25px;
-        padding: 15px;
+    }
+
+    .review-box {
         background: white;
+        padding: 18px;
         border-radius: 12px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        margin-bottom: 25px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
-    button {
-        margin-top: 12px;
-        padding: 8px 18px;
-        background-color: #1fa3b1;
+    .copy-btn {
+        background: #1abc9c;
         color: white;
+        padding: 8px 14px;
         border: none;
-        border-radius: 8px;
-        font-size: 15px;
+        border-radius: 6px;
         cursor: pointer;
-        display: inline-block;
+        margin-top: 10px;
+        font-size: 15px;
     }
 
-    button:hover {
-        opacity: 0.88;
+    .copy-btn:active {
+        opacity: 0.6;
     }
 </style>
 
 <script>
 function copyAndGo(text) {
     navigator.clipboard.writeText(text).then(() => {
+        alert("已复制！等下粘贴在 Google Review 就可以啦！");
         window.location.href = "https://g.page/r/CWQ6oS4buVX2EAE/review";
     });
 }
 </script>
+
 </head>
 
 <body>
 
-<h2>⭐ One-Click Copy Review</h2>
+<h2>选择一条好评 → 点击复制 → 自动跳转到 Google Review</h2>
 
-<!-- =============== 中文 1–10 =============== -->
-<div class="review-block">
-1️⃣<br>
-20多年的老店果然专业！验光很细心，服务也温柔，小孩的 Stellest 镜片讲解得非常清楚。推荐！
-<button onclick="copyAndGo('20多年的老店果然专业！验光很细心，服务也温柔，小孩的 Stellest 镜片讲解得非常清楚。推荐！')">Copy & Review</button>
+<!-- ================= 中文 ================= -->
+
+<div class="review-box">
+中文好评 1：
+<br>20多年的老店果然专业！验光很细心，服务也温柔，小孩的 Stellest 镜片讲解得非常清楚。推荐！
+<button class="copy-btn" onclick="copyAndGo('20多年的老店果然专业！验光很细心，服务也温柔，小孩的 Stellest 镜片讲解得非常清楚。推荐！')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-2️⃣<br>
-这里的镜框真的很多新款，选择超多～而且全部都是正品牌，品质很好，看了就放心。
-<button onclick="copyAndGo('这里的镜框真的很多新款，选择超多～而且全部都是正品牌，品质很好，看了就放心。')">Copy & Review</button>
+<div class="review-box">
+中文好评 2：
+<br>这里的镜框真的很多新款，选择超多～而且全部都是正品牌，品质很好，看了就放心。
+<button class="copy-btn" onclick="copyAndGo('这里的镜框真的很多新款，选择超多～而且全部都是正品牌，品质很好，看了就放心。')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-3️⃣<br>
-小孩验光很专业，整个流程不急不乱。Stellest 镜片也配得很好，孩子戴着很舒服。谢谢 Nice Vision 🩷
-<button onclick="copyAndGo('小孩验光很专业，整个流程不急不乱。Stellest 镜片也配得很好，孩子戴着很舒服。谢谢 Nice Vision 🩷')">Copy & Review</button>
+<div class="review-box">
+中文好评 3：
+<br>小孩验光很专业，整个流程不急不乱。Stellest 镜片也配得很好，孩子戴着很舒服。谢谢 Nice Vision 🩷
+<button class="copy-btn" onclick="copyAndGo('小孩验光很专业，整个流程不急不乱。Stellest 镜片也配得很好，孩子戴着很舒服。谢谢 Nice Vision 🩷')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-4️⃣<br>
-真的喜欢这里的服务，小姐姐们很可爱又耐心。帮我找到最适合的镜框，价钱也合理。很推荐！
-<button onclick="copyAndGo('真的喜欢这里的服务，小姐姐们很可爱又耐心。帮我找到最适合的镜框，价钱也合理。很推荐！')">Copy & Review</button>
+<div class="review-box">
+中文好评 4：
+<br>真的喜欢这里的服务，小姐姐们很可爱又耐心。帮我找到最适合的镜框，价钱也合理。很推荐！
+<button class="copy-btn" onclick="copyAndGo('真的喜欢这里的服务，小姐姐们很可爱又耐心。帮我找到最适合的镜框，价钱也合理。很推荐！')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-5️⃣<br>
-第一次来就很满意～20年老字号果然不一样，验光师解释得很仔细，选镜框也不会被硬推，舒服！
-<button onclick="copyAndGo('第一次来就很满意～20年老字号果然不一样，验光师解释得很仔细，选镜框也不会被硬推，舒服！')">Copy & Review</button>
+<div class="review-box">
+中文好评 5：
+<br>第一次来就很满意～20年老字号果然不一样，验光师解释得很仔细，选镜框也不会被硬推，舒服！
+<button class="copy-btn" onclick="copyAndGo('第一次来就很满意～20年老字号果然不一样，验光师解释得很仔细，选镜框也不会被硬推，舒服！')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-6️⃣<br>
-镜框款式真的是多到选不完🤣 新款、轻的、特别的都有。最后买到超喜欢的一副，谢谢你们～
-<button onclick="copyAndGo('镜框款式真的是多到选不完🤣 新款、轻的、特别的都有。最后买到超喜欢的一副，谢谢你们～')">Copy & Review</button>
+<div class="review-box">
+中文好评 6：
+<br>镜框款式真的是多到选不完🤣 新款、轻的、特别的都有。最后买到超喜欢的一副，谢谢你们～
+<button class="copy-btn" onclick="copyAndGo('镜框款式真的是多到选不完🤣 新款、轻的、特别的都有。最后买到超喜欢的一副，谢谢你们～')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-7️⃣<br>
-帮孩子配 Essilor Stellest，真的很专业。机器齐全，验光过程也让孩子很放松。服务满分！
-<button onclick="copyAndGo('帮孩子配 Essilor Stellest，真的很专业。机器齐全，验光过程也让孩子很放松。服务满分！')">Copy & Review</button>
+<div class="review-box">
+中文好评 7：
+<br>帮孩子配 Essilor Stellest，真的很专业。机器齐全，验光过程也让孩子很放松。服务满分！
+<button class="copy-btn" onclick="copyAndGo('帮孩子配 Essilor Stellest，真的很专业。机器齐全，验光过程也让孩子很放松。服务满分！')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-8️⃣<br>
-这里是我最放心的眼镜店，所有东西都是正品牌，透明又安心。推荐给要找品质的朋友！
-<button onclick="copyAndGo('这里是我最放心的眼镜店，所有东西都是正品牌，透明又安心。推荐给要找品质的朋友！')">Copy & Review</button>
+<div class="review-box">
+中文好评 8：
+<br>这里是我最放心的眼镜店，所有东西都是正品牌，透明又安心。推荐给要找品质的朋友！
+<button class="copy-btn" onclick="copyAndGo('这里是我最放心的眼镜店，所有东西都是正品牌，透明又安心。推荐给要找品质的朋友！')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-9️⃣<br>
-店里环境舒服，服务又好。镜框更新速度很快，每次来都有新款。喜欢 Nice Vision 的风格～
-<button onclick="copyAndGo('店里环境舒服，服务又好。镜框更新速度很快，每次来都有新款。喜欢 Nice Vision 的风格～')">Copy & Review</button>
+<div class="review-box">
+中文好评 9：
+<br>店里环境舒服，服务又好。镜框更新速度很快，每次来都有新款。喜欢 Nice Vision 的风格～
+<button class="copy-btn" onclick="copyAndGo('店里环境舒服，服务又好。镜框更新速度很快，每次来都有新款。喜欢 Nice Vision 的风格～')">复制 & 前往 Google Review</button>
 </div>
 
-<div class="review-block">
-🔟<br>
-从小配到大，超过10年顾客了。服务始终一样用心。孩子现在也在这里做近视控制，好放心。
-<button onclick="copyAndGo('从小配到大，超过10年顾客了。服务始终一样用心。孩子现在也在这里做近视控制，好放心。')">Copy & Review</button>
+<div class="review-box">
+中文好评 10：
+<br>从小配到大，超过10年顾客了。服务始终一样用心。孩子现在也在这里做近视控制，好放心。
+<button class="copy-btn" onclick="copyAndGo('从小配到大，超过10年顾客了。服务始终一样用心。孩子现在也在这里做近视控制，好放心。')">复制 & 前往 Google Review</button>
 </div>
 
-<!-- =============== 英文 1–10 =============== -->
 
-<div class="review-block">
-1️⃣<br>
-Such a lovely optical shop! Over 20 years of experience and it really shows. The eye check was so detailed and gentle. Highly recommend!
-<button onclick="copyAndGo('Such a lovely optical shop! Over 20 years of experience and it really shows. The eye check was so detailed and gentle. Highly recommend!')">Copy & Review</button>
+
+
+<!-- ================= 英文 ================= -->
+
+<div class="review-box">
+English 1:
+<br>Such a lovely optical shop! Over 20 years of experience and it really shows. The eye check was so detailed and gentle. Highly recommend!
+<button class="copy-btn" onclick="copyAndGo('Such a lovely optical shop! Over 20 years of experience and it really shows. The eye check was so detailed and gentle. Highly recommend!')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-2️⃣<br>
-So many new frame designs here! I was spoiled with choices 🤣 All genuine brands too — super安心！
-<button onclick="copyAndGo('So many new frame designs here! I was spoiled with choices 🤣 All genuine brands too — super安心！')">Copy & Review</button>
+<div class="review-box">
+English 2:
+<br>So many new frame designs here! I was spoiled with choices 🤣 All genuine brands too — super安心！
+<button class="copy-btn" onclick="copyAndGo('So many new frame designs here! I was spoiled with choices 🤣 All genuine brands too — super安心！')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-3️⃣<br>
-Brought my child for an eye check and the team was amazing. Stellest lens explanation was super clear. Very professional and kind.
-<button onclick="copyAndGo('Brought my child for an eye check and the team was amazing. Stellest lens explanation was super clear. Very professional and kind.')">Copy & Review</button>
+<div class="review-box">
+English 3:
+<br>Brought my child for an eye check and the team was amazing. Stellest lens explanation was super clear. Very professional and kind.
+<button class="copy-btn" onclick="copyAndGo('Brought my child for an eye check and the team was amazing. Stellest lens explanation was super clear. Very professional and kind.')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-4️⃣<br>
-The staff here are so sweet and patient! Helped me choose a frame that fits my face perfectly. Love my new glasses!
-<button onclick="copyAndGo('The staff here are so sweet and patient! Helped me choose a frame that fits my face perfectly. Love my new glasses!')">Copy & Review</button>
+<div class="review-box">
+English 4:
+<br>The staff here are so sweet and patient! Helped me choose a frame that fits my face perfectly. Love my new glasses!
+<button class="copy-btn" onclick="copyAndGo('The staff here are so sweet and patient! Helped me choose a frame that fits my face perfectly. Love my new glasses!')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-5️⃣<br>
-A real trusted shop with 20+ years of experience. The optometrist explained everything slowly and clearly. Feel very安心 here.
-<button onclick="copyAndGo('A real trusted shop with 20+ years of experience. The optometrist explained everything slowly and clearly. Feel very安心 here.')">Copy & Review</button>
+<div class="review-box">
+English 5:
+<br>A real trusted shop with 20+ years of experience. The optometrist explained everything slowly and clearly. Feel very安心 here.
+<button class="copy-btn" onclick="copyAndGo('A real trusted shop with 20+ years of experience. The optometrist explained everything slowly and clearly. Feel very安心 here.')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-6️⃣<br>
-Frame choices are CRAZY many! New arrivals, lightweight, stylish — everything also have 😍 Ended up buying a super nice one!
-<button onclick="copyAndGo('Frame choices are CRAZY many! New arrivals, lightweight, stylish — everything also have 😍 Ended up buying a super nice one!')">Copy & Review</button>
+<div class="review-box">
+English 6:
+<br>Frame choices are CRAZY many! New arrivals, lightweight, stylish — everything also have 😍 Ended up buying a super nice one!
+<button class="copy-btn" onclick="copyAndGo('Frame choices are CRAZY many! New arrivals, lightweight, stylish — everything also have 😍 Ended up buying a super nice one!')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-7️⃣<br>
-My child loves his new Essilor Stellest glasses. The team handled kids so well — gentle and friendly. Thank you Nice Vision Optic!
-<button onclick="copyAndGo('My child loves his new Essilor Stellest glasses. The team handled kids so well — gentle and friendly. Thank you Nice Vision Optic!')">Copy & Review</button>
+<div class="review-box">
+English 7:
+<br>My child loves his new Essilor Stellest glasses. The team handled kids so well — gentle and friendly. Thank you Nice Vision Optic!
+<button class="copy-btn" onclick="copyAndGo('My child loves his new Essilor Stellest glasses. The team handled kids so well — gentle and friendly. Thank you Nice Vision Optic!')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-8️⃣<br>
-All genuine brands here, no worry at all. Prices are fair and service is A++. Will definitely come again!
-<button onclick="copyAndGo('All genuine brands here, no worry at all. Prices are fair and service is A++. Will definitely come again!')">Copy & Review</button>
+<div class="review-box">
+English 8:
+<br>All genuine brands here, no worry at all. Prices are fair and service is A++. Will definitely come again!
+<button class="copy-btn" onclick="copyAndGo('All genuine brands here, no worry at all. Prices are fair and service is A++. Will definitely come again!')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-9️⃣<br>
-The shop feels cozy and the service is warm. Every visit got new frames to see. I love the vibes here!
-<button onclick="copyAndGo('The shop feels cozy and the service is warm. Every visit got new frames to see. I love the vibes here!')">Copy & Review</button>
+<div class="review-box">
+English 9:
+<br>The shop feels cozy and the service is warm. Every visit got new frames to see. I love the vibes here!
+<button class="copy-btn" onclick="copyAndGo('The shop feels cozy and the service is warm. Every visit got new frames to see. I love the vibes here!')">Copy & Go to Google Review</button>
 </div>
 
-<div class="review-block">
-🔟<br>
-I’ve been coming here for years, and now my kids too. Same good service, same good quality. Truly a family optical shop ❤
-<button onclick="copyAndGo('I’ve been coming here for years, and now my kids too. Same good service, same good quality. Truly a family optical shop ❤')">Copy & Review</button>
-</div>
-
-<!-- =============== 马来文 1–6 =============== -->
-
-<div class="review-block">
-1️⃣<br>
-Perkhidmatan sangat baik! Pemeriksaan mata sangat teliti dan staf sangat mesra. Kedai optik yang boleh dipercayai!
-<button onclick="copyAndGo('Perkhidmatan sangat baik! Pemeriksaan mata sangat teliti dan staf sangat mesra. Kedai optik yang boleh dipercayai!')">Copy & Review</button>
-</div>
-
-<div class="review-block">
-2️⃣<br>
-Banyak pilihan bingkai baharu! Semua jenama asli dan harga juga berpatutan. Sangat puas hati.
-<button onclick="copyAndGo('Banyak pilihan bingkai baharu! Semua jenama asli dan harga juga berpatutan. Sangat puas hati.')">Copy & Review</button>
-</div>
-
-<div class="review-block">
-3️⃣<br>
-Anak saya sangat selesa dengan cermin mata Stellest. Proses pemeriksaan sangat profesional. Terima kasih Nice Vision!
-<button onclick="copyAndGo('Anak saya sangat selesa dengan cermin mata Stellest. Proses pemeriksaan sangat profesional. Terima kasih Nice Vision!')">Copy & Review</button>
-</div>
-
-<div class="review-block">
-4️⃣<br>
-Staf sangat penyabar dan membantu saya pilih bingkai yang sesuai. Kedai ini memang terbaik!
-<button onclick="copyAndGo('Staf sangat penyabar dan membantu saya pilih bingkai yang sesuai. Kedai ini memang terbaik!')">Copy & Review</button>
-</div>
-
-<div class="review-block">
-5️⃣<br>
-Kedai sangat selesa dan banyak pilihan bingkai baharu setiap kali saya datang. Memang suka vibe kedai ini!
-<button onclick="copyAndGo('Kedai sangat selesa dan banyak pilihan bingkai baharu setiap kali saya datang. Memang suka vibe kedai ini!')">Copy & Review</button>
-</div>
-
-<div class="review-block">
-6️⃣<br>
-Saya sudah lama menjadi pelanggan dan kini anak saya juga. Kualiti dan layanan tetap terbaik. Recommended!
-<button onclick="copyAndGo('Saya sudah lama menjadi pelanggan dan kini anak saya juga. Kualiti dan layanan tetap terbaik. Recommended!')">Copy & Review</button>
+<div class="review-box">
+English 10:
+<br>I’ve been coming here for years, and now my kids too. Same good service, same good quality. Truly a family optical shop ❤
+<button class="copy-btn" onclick="copyAndGo('I’ve been coming here for years, and now my kids too. Same good service, same good quality. Truly a family optical shop ❤')">Copy & Go to Google Review</button>
 </div>
 
 </body>
