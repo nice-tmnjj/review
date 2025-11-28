@@ -76,12 +76,12 @@ function goReview(){
     window.location.href = "https://g.page/r/CWQ6oS4buVX2EAE/review";
 }
 
-// 设置浮层提示文字
+// 设置浮层文字（支持换行）
 function overlayText(){
     const lang = getLang();
-    if(lang==='zh') return '已复制内容！请前往 Google Review 粘贴 👍';
-    else if(lang==='ms') return 'Teks telah disalin! Sila tampal di Google Review 👍';
-    else return 'Copied! Paste it in Google Review 👍';
+    if(lang==='zh') return '已复制内容！<br>请前往 Google Review 粘贴 👍';
+    else if(lang==='ms') return 'Teks telah disalin!<br>Sila tampal di Google Review 👍';
+    else return 'Copied!<br>Paste it in Google Review 👍';
 }
 </script>
 </head>
@@ -100,7 +100,7 @@ function overlayText(){
 </div>
 
 <script>
-document.getElementById('overlay-text').innerText = overlayText();
+document.getElementById('overlay-text').innerHTML = overlayText();
 </script>
 
 <!-- ================= 中文好评 ================= -->
@@ -205,7 +205,6 @@ document.getElementById('overlay-text').innerText = overlayText();
 </div>
 
 <!-- ================= English Reviews ================= -->
-
 <div class="review-box">
   <div class="review-header">
     ⭐ 【Old but Gold】 
@@ -338,6 +337,3 @@ document.getElementById('overlay-text').innerText = overlayText();
 
 </body>
 </html>
-
-
-
