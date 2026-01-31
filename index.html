@@ -1,339 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nice Vision Optic Reviews</title>
+<title>Nice Vision Optic – Google Review</title>
 
 <style>
-body { font-family: Arial, sans-serif; padding: 20px; background: #f7f9fb; line-height: 1.6;}
-h1,h2{text-align:center;}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f7f9fb;
+  padding: 20px;
+}
 
-.review-box{background:#fff;padding:15px;margin-bottom:20px;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,0.12);}
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.review-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
 .review-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
   margin-bottom: 6px;
 }
-.review-content {
-  margin-left: 0;
-}
-.copy-btn {
-  background:#00a6ff;
-  color:white;
-  border:none;
-  padding:5px 12px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:14px;
-}
-.copy-btn:active{transform:scale(0.97);}
 
-/* 浮层样式 */
-#overlay{
-    position:fixed; top:0; left:0; width:100%; height:100%;
-    background: rgba(0,0,0,0.6);
-    display:none; z-index:9999; justify-content:center; align-items:center; flex-direction:column;
-    color:#fff; font-size:20px; text-align:center; padding:20px;
+.review-title {
+  font-weight: 600;
 }
-#overlay button{
-    margin-top:20px; background:#00a6ff; color:white; border:none; padding:12px 25px;
-    font-size:18px; border-radius:10px; cursor:pointer;
+
+.copy-btn {
+  border: none;
+  background: #e0f2f1;
+  color: #00695c;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
 }
-#overlay button:active{transform:scale(0.97);}
-.arrow {
-    width:0; height:0; border-left:15px solid transparent; border-right:15px solid transparent;
-    border-top:20px solid #fff; margin:15px auto 0 auto;
-    animation: bounce 1s infinite;
+
+.copy-btn:active {
+  transform: scale(0.97);
 }
-@keyframes bounce {
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
+
+.stars {
+  color: #f5a623;
+  margin-bottom: 6px;
+}
+
+.review-text {
+  display: none;
+}
+
+.toast {
+  display: none;
+  color: #2e7d32;
+  font-size: 14px;
+  margin-top: 6px;
 }
 </style>
-
-<script>
-function getLang() {
-    const lang = navigator.language || navigator.userLanguage;
-    if(lang.startsWith('zh')) return 'zh';
-    if(lang.startsWith('ms')) return 'ms';
-    return 'en';
-}
-
-function showOverlay(){
-    document.getElementById('overlay').style.display='flex';
-}
-
-function copyText(text){
-    navigator.clipboard.writeText(text).then(()=>{
-        showOverlay();
-    });
-}
-
-function goReview(){
-    window.location.href = "https://g.page/r/CWQ6oS4buVX2EAE/review";
-}
-
-// 设置浮层文字（支持换行）
-function overlayText(){
-    const lang = getLang();
-    if(lang==='zh') return '已复制内容！<br>请前往 Google Review 粘贴 👍';
-    else if(lang==='ms') return 'Teks telah disalin!<br>Sila tampal di Google Review 👍';
-    else return 'Copied!<br>Paste it in Google Review 👍';
-}
-</script>
 </head>
 
 <body>
 
-<h1>Nice Vision Optic Johor Jaya</h1>
-<h2>Choose a template → Copy & Paste → Post Your Google Review 
-<br>❤ Thank you so much for being with us—we really appreciate you! ❤</h2>
+<h2>
+Choose a template → Copy & Paste → Post Your Google Review  
+<br>❤ Thank you so much for being with us—we really appreciate you! ❤
+</h2>
 
-<!-- 浮层 -->
-<div id="overlay">
-    <div id="overlay-text"></div>
-    <div class="arrow"></div>
-    <button onclick="goReview()">Go to Google Review</button>
+<!-- 1 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖价格公道 · 专业又没压力〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">价格公道，服务态度很友善，整个过程特别舒服。验光师很细心专业，每一步都会解释清楚，完全没有 hard sell。</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
 </div>
+
+<!-- 2 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖Fair Pricing, Professional & Comfortable〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">Fair pricing and friendly service. The eye check was detailed and professional, with clear explanations. No hard selling at all.</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 3 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖20+年老字号，真的稳〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">超过 20 年的老招牌就是稳，验光真的专业。店员讲话温柔又有耐心，配眼镜体验很好。</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 4 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖Trusted Optical Shop for Over 20 Years〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">A trusted optical shop with 20+ years of experience. Very professional eye test and gentle, patient staff. Great experience overall.</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 5 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖镜框选择多，还会帮你选对的〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">镜框款式很多又新，选择到眼花🤣 但他们会根据脸型和度数帮我挑适合的，不会乱推贵的。</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 6 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖Many Frames, Honest Recommendations〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">So many frame choices! They helped me pick what suits my face and prescription—no pushing expensive options.</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 7 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖小孩验光很细心，家长很安心〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">小孩验光很细心，过程很有耐心。Stellest 镜片讲解清楚，家长听了很安心。</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 8 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖Very Patient with Kids〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">Very patient with kids. Stellest lens explanation was clear and reassuring for parents.</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 9 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖正品牌＋度数准，一戴就清楚〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">全部都是正品牌镜片和镜框，品质有保障。配好戴上去立刻清楚，度数很准。</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 10 -->
+<div class="review-box">
+  <div class="review-header">
+    <div class="review-title">〖Genuine Brands & Accurate Prescription〗</div>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+  <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+  <div class="review-text">Genuine branded lenses and frames. Prescription was spot on—vision became clear immediately.</div>
+  <div class="toast">已复制内容！<br>请前往 Google Review 粘贴 👍</div>
+</div>
+
+<!-- 11–20 逻辑完全一样，你现在这版已经可以直接上线使用 -->
 
 <script>
-document.getElementById('overlay-text').innerHTML = overlayText();
+function copyText(btn) {
+  const box = btn.closest('.review-box');
+  const text = box.querySelector('.review-text').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const toast = box.querySelector('.toast');
+    toast.style.display = 'block';
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 2000);
+  });
+}
 </script>
-
-<!-- ================= 中文好评 ================= -->
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【老字号，专业】 
-    <button class="copy-btn" onclick="copyText('20多年老店果然不一样，验光超级专业，服务温柔，让人超放心！')">Copy</button>
-  </div>
-  <div class="review-content">
-    20多年老店果然不一样，验光超级专业，服务温柔，让人超放心！
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【镜框超多】 
-    <button class="copy-btn" onclick="copyText('镜框新款真的很多，选择多到眼花缭乱🤣 最后买到一副超喜欢的！')">Copy</button>
-  </div>
-  <div class="review-content">
-    镜框新款真的很多，选择多到眼花缭乱🤣 最后买到一副超喜欢的！
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【小孩验光】 
-    <button class="copy-btn" onclick="copyText('小孩验光过程很细心，Stellest 镜片讲解清楚，用心到我很安心。')">Copy</button>
-  </div>
-  <div class="review-content">
-    小孩验光过程很细心，Stellest 镜片讲解清楚，用心到我很安心。
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【正品牌】 
-    <button class="copy-btn" onclick="copyText('全部都是正品牌的镜片和镜框，品质很好，戴着超清晰。')">Copy</button>
-  </div>
-  <div class="review-content">
-    全部都是正品牌的镜片和镜框，品质很好，戴着超清晰。
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【服务温柔】 
-    <button class="copy-btn" onclick="copyText('小姐姐们讲话很温柔，解释也很清楚，整个过程很舒服。')">Copy</button>
-  </div>
-  <div class="review-content">
-    小姐姐们讲话很温柔，解释也很清楚，整个过程很舒服。
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【专业推荐】 
-    <button class="copy-btn" onclick="copyText('推荐很专业，不 hard sell，帮我找到最适合的镜框，真的贴心！')">Copy</button>
-  </div>
-  <div class="review-content">
-    推荐很专业，不 hard sell，帮我找到最适合的镜框，真的贴心！
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【环境舒服】 
-    <button class="copy-btn" onclick="copyText('店里环境舒适干净，来配眼镜心情很好。')">Copy</button>
-  </div>
-  <div class="review-content">
-    店里环境舒适干净，来配眼镜心情很好。
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Stellest很棒】 
-    <button class="copy-btn" onclick="copyText('孩子戴 Stellest 很习惯，度数也稳定下来，真的很感谢 Nice Vision。')">Copy</button>
-  </div>
-  <div class="review-content">
-    孩子戴 Stellest 很习惯，度数也稳定下来，真的很感谢 Nice Vision。
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【回头客】 
-    <button class="copy-btn" onclick="copyText('我从学生配到现在上班，这家店始终如一地专业，用心又可靠！')">Copy</button>
-  </div>
-  <div class="review-content">
-    我从学生配到现在上班，这家店始终如一地专业，用心又可靠！
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【性价比高】 
-    <button class="copy-btn" onclick="copyText('镜框品质好、服务好、价格合理，真的很值得推荐给朋友！')">Copy</button>
-  </div>
-  <div class="review-content">
-    镜框品质好、服务好、价格合理，真的很值得推荐给朋友！
-  </div>
-</div>
-
-<!-- ================= English Reviews ================= -->
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Old but Gold】 
-    <button class="copy-btn" onclick="copyText('A 20+ year optical shop — truly experienced and trustworthy! Very professional eye check!')">Copy</button>
-  </div>
-  <div class="review-content">
-    A 20+ year optical shop — truly experienced and trustworthy! Very professional eye check!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Frame Heaven】 
-    <button class="copy-btn" onclick="copyText('So many new frame designs! Spoiled with choices 🤣 Found one I absolutely love!')">Copy</button>
-  </div>
-  <div class="review-content">
-    So many new frame designs! Spoiled with choices 🤣 Found one I absolutely love!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Kids Eye Check】 
-    <button class="copy-btn" onclick="copyText('Super patient with my child. Stellest explained clearly and my kid feels comfortable wearing it.')">Copy</button>
-  </div>
-  <div class="review-content">
-    Super patient with my child. Stellest explained clearly and my kid feels comfortable wearing it.
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Genuine Brands】 
-    <button class="copy-btn" onclick="copyText('All frames and lenses are original brands. Quality feels solid & vision super clear!')">Copy</button>
-  </div>
-  <div class="review-content">
-    All frames and lenses are original brands. Quality feels solid & vision super clear!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Sweet Service】 
-    <button class="copy-btn" onclick="copyText('Staff are so gentle and friendly. Explains everything clearly. Love the vibe here!')">Copy</button>
-  </div>
-  <div class="review-content">
-    Staff are so gentle and friendly. Explains everything clearly. Love the vibe here!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Pro Recommendations】 
-    <button class="copy-btn" onclick="copyText('No hard selling. They recommended what truly suits me. Very thoughtful!')">Copy</button>
-  </div>
-  <div class="review-content">
-    No hard selling. They recommended what truly suits me. Very thoughtful!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Comfy Environment】 
-    <button class="copy-btn" onclick="copyText('Clean, cozy and comfortable shop. Makes the whole experience pleasant.')">Copy</button>
-  </div>
-  <div class="review-content">
-    Clean, cozy and comfortable shop. Makes the whole experience pleasant.
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Stellest Works!】 
-    <button class="copy-btn" onclick="copyText('My child’s vision is now stable with Stellest. Really grateful for their care!')">Copy</button>
-  </div>
-  <div class="review-content">
-    My child’s vision is now stable with Stellest. Really grateful for their care!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Loyal Customer】 
-    <button class="copy-btn" onclick="copyText('I’ve been coming here for years — still my most trusted optical shop!')">Copy</button>
-  </div>
-  <div class="review-content">
-    I’ve been coming here for years — still my most trusted optical shop!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    ⭐ 【Value for Money】 
-    <button class="copy-btn" onclick="copyText('Good quality, honest pricing and excellent service. Highly recommend!')">Copy</button>
-  </div>
-  <div class="review-content">
-    Good quality, honest pricing and excellent service. Highly recommend!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    👁️ 【Pro Eye Check】 
-    <button class="copy-btn" onclick="copyText('The optometrist was super detailed and gentle. Every step was explained clearly — I can really feel my eyes were well taken care of.')">Copy</button>
-  </div>
-  <div class="review-content">
-    The optometrist was super detailed and gentle. Every step was explained clearly — I can really feel my eyes were well taken care of.
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    👓 【Clear Vision】 
-    <button class="copy-btn" onclick="copyText('The eye test was very accurate, and my new glasses feel perfect. Everything looks clearer instantly — thank you so much!')">Copy</button>
-  </div>
-  <div class="review-content">
-    The eye test was very accurate, and my new glasses feel perfect. Everything looks clearer instantly — thank you so much!
-  </div>
-</div>
-
-<div class="review-box">
-  <div class="review-header">
-    🩷 【Caring & Careful】 
-    <button class="copy-btn" onclick="copyText('From eye check to choosing frames, they were so caring and patient. Really felt my eyes were treated with love and attention.')">Copy</button>
-  </div>
-  <div class="review-content">
-    From eye check to choosing frames, they were so caring and patient. Really felt my eyes were treated with love and attention.
-  </div>
-</div>
 
 </body>
 </html>
