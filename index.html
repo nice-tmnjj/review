@@ -4,39 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Leave Us a Review ❤️</title>
+<title>Nice Vision Review</title>
 
 <style>
 
 body{
-font-family:Arial;
-background:#f7f7f7;
+font-family:Arial, sans-serif;
+background:#ffffff;
 padding:20px;
-text-align:center;
+max-width:700px;
+margin:auto;
 }
 
 h2{
-color:#004ea2;
+text-align:center;
+margin-bottom:30px;
 }
 
 .review-box{
 background:#d5eaf7;
-padding:18px;
-margin:15px auto;
-border-radius:12px;
-max-width:600px;
-text-align:left;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+padding:15px;
+margin-bottom:18px;
+border-radius:10px;
 }
 
-.title{
-font-weight:bold;
+.review-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
 margin-bottom:6px;
-}
-
-.stars{
-color:#f5b301;
-margin-bottom:8px;
 }
 
 .copy-btn{
@@ -44,27 +40,26 @@ background:#004ea2;
 color:white;
 font-weight:bold;
 border:none;
-padding:8px 14px;
-border-radius:8px;
+padding:6px 12px;
+border-radius:6px;
 cursor:pointer;
-margin-top:10px;
 }
 
-.copy-btn:hover{
-opacity:0.9;
+.stars{
+margin-bottom:8px;
 }
 
 .toast{
+display:none;
 position:fixed;
 bottom:20px;
 left:50%;
 transform:translateX(-50%);
-background:#004ea2;
+background:#333;
 color:white;
-padding:12px 20px;
-border-radius:10px;
-display:none;
-font-weight:bold;
+padding:12px 18px;
+border-radius:8px;
+font-size:14px;
 }
 
 </style>
@@ -73,8 +68,8 @@ font-weight:bold;
 <body>
 
 <h2>
-Choose a template → Copy → Paste to Google Review ⭐
-<br>❤ Thank you so much for supporting us! ❤
+Choose a template → Copy & Paste → Post Your Google Review
+<br>❤ Thank you so much for being with us—we really appreciate you! ❤
 </h2>
 
 <div id="reviews"></div>
@@ -86,55 +81,56 @@ Choose a template → Copy → Paste to Google Review ⭐
 
 <script>
 
-const reviewLink="YOUR_GOOGLE_REVIEW_LINK";
+const reviewLink="https://g.page/r/CWQ6oS4buVX2EAE/review";
 
-/* ========= 中文 Reviews ========= */
+/* ===== 20 REVIEWS ===== */
 
-const chineseReviews=[
+const reviews=[
 
-{title:"〖特地从新加坡过来配眼镜〗",text:"特地从新加坡过来配眼镜，一开始其实有点担心，但验光真的很专业，会解释得很清楚，不是那种随便配。戴了一个星期，真的很舒服，完全没有不适。值得特地过来。"},
-{title:"〖不只是卖眼镜〗",text:"这里不是那种只卖眼镜的店，更像是帮你解决视力问题。验光师很细心，会根据生活习惯建议镜片，感觉很专业。"},
-{title:"〖体验比新加坡更好〗",text:"在新加坡配过几次眼镜，但这次体验反而更好。这里会慢慢帮你调到最适合，不会赶时间。"},
-{title:"〖小孩验光很安心〗",text:"带孩子来配近视控制镜片，讲解非常清楚，也不会乱推荐。作为家长会比较安心。"},
-{title:"〖朋友介绍，超出预期〗",text:"朋友介绍来的，本来只是想试试看，结果比预期好很多。服务很细，但不会让人有压力。"},
-{title:"〖夜驾真的改善〗",text:"夜驾镜片真的有差，晚上开车不刺眼。之前一直以为是正常的，现在才知道原来可以改善。"},
-{title:"〖过程专业有耐心〗",text:"整个过程很有耐心，从验光到选镜框都有人指导，不会乱买。感觉每一步都很专业。"},
-{title:"〖品质值得价格〗",text:"价格不是最便宜的，但你会知道自己在付什么。品质和服务都有到位。"},
-{title:"〖跨境也放心〗",text:"跨境来配眼镜，最怕售后问题，但这里会交代清楚，也有跟进，让人放心。"},
-{title:"〖长期照顾眼睛〗",text:"不是那种一次性服务，之后也会提醒复查。感觉是长期照顾眼睛的地方。"}
-];
+{title:"〖特地从新加坡过来〗",text:"特地从新加坡过来配眼镜，一开始其实有点担心，但验光真的很专业，会解释得很清楚，不是那种随便配。戴了一个星期，真的很舒服，完全没有不适。值得特地过来。"},
+{title:"〖Singapore Trip Worth It〗",text:"Came all the way from Singapore to make my glasses. Honestly was a bit worried at first, but the eye test was very thorough and well explained. Been wearing for a week now, super comfortable. Definitely worth the trip."},
 
-/* ========= English Reviews ========= */
+{title:"〖解决视力问题〗",text:"这里不是那种只卖眼镜的店，更像是帮你解决视力问题。验光师很细心，会根据生活习惯建议镜片，感觉很专业。"},
+{title:"〖Vision Solution〗",text:"This is not just a place selling glasses, they actually help you solve your vision issues. The optometrist was very detailed and gave recommendations based on my lifestyle. Very professional."},
 
-const englishReviews=[
+{title:"〖体验更好〗",text:"在新加坡配过几次眼镜，但这次体验反而更好。这里会慢慢帮你调到最适合，不会赶时间。"},
+{title:"〖Better Experience〗",text:"I’ve made glasses in Singapore before, but this experience was actually better. They take their time to fine-tune everything, not rushed at all."},
 
-{title:"〖Worth the Trip from Singapore〗",text:"Came all the way from Singapore to make my glasses. Honestly was a bit worried at first, but the eye test was very thorough and well explained. Been wearing for a week now, super comfortable. Definitely worth the trip."},
-{title:"〖More Than Just Glasses〗",text:"This is not just a place selling glasses, they actually help you solve your vision issues. The optometrist was very detailed and gave recommendations based on my lifestyle. Very professional."},
-{title:"〖Better Experience Than Expected〗",text:"I’ve made glasses in Singapore before, but this experience was actually better. They take their time to fine-tune everything, not rushed at all."},
-{title:"〖Very Assuring for Parents〗",text:"Brought my child here for myopia control lenses. Everything was explained clearly and no hard selling. As a parent, I feel very assured."},
-{title:"〖Better Than Expected〗",text:"Came here through a friend’s recommendation. Didn’t expect much at first, but it turned out really good. Service is detailed but not pushy."},
-{title:"〖Night Driving Improved〗",text:"The night driving lenses really make a difference. Driving at night is much more comfortable now. Didn’t realise this could be improved before."},
-{title:"〖Guided & Professional〗",text:"Very patient throughout the whole process, from eye test to choosing frames. No random selling, everything feels guided and professional."},
+{title:"〖孩子近视控制〗",text:"带孩子来配近视控制镜片，讲解非常清楚，也不会乱推荐。作为家长会比较安心。"},
+{title:"〖Myopia Control〗",text:"Brought my child here for myopia control lenses. Everything was explained clearly and no hard selling. As a parent, I feel very assured."},
+
+{title:"〖朋友推荐〗",text:"朋友介绍来的，本来只是想试试看，结果比预期好很多。服务很细，但不会让人有压力。"},
+{title:"〖Friend Recommendation〗",text:"Came here through a friend’s recommendation. Didn’t expect much at first, but it turned out really good. Service is detailed but not pushy."},
+
+{title:"〖夜驾改善〗",text:"夜驾镜片真的有差，晚上开车不刺眼。之前一直以为是正常的，现在才知道原来可以改善。"},
+{title:"〖Night Driving Lens〗",text:"The night driving lenses really make a difference. Driving at night is much more comfortable now. Didn’t realise this could be improved before."},
+
+{title:"〖过程专业〗",text:"整个过程很有耐心，从验光到选镜框都有人指导，不会乱买。感觉每一步都很专业。"},
+{title:"〖Professional Process〗",text:"Very patient throughout the whole process, from eye test to choosing frames. No random selling, everything feels guided and professional."},
+
+{title:"〖值得的价格〗",text:"价格不是最便宜的，但你会知道自己在付什么。品质和服务都有到位。"},
 {title:"〖Worth the Price〗",text:"Not the cheapest, but you understand what you are paying for. Quality and service are definitely there."},
+
+{title:"〖跨境安心〗",text:"跨境来配眼镜，最怕售后问题，但这里会交代清楚，也有跟进，让人放心。"},
 {title:"〖Peace of Mind〗",text:"Coming from Singapore, my biggest concern was after-sales. But they explained everything clearly and followed up, which gives peace of mind."},
-{title:"〖Long-Term Eye Care〗",text:"It’s not a one-time service. They follow up and remind for check-ups. Feels like a place for long-term eye care."}
+
+{title:"〖长期照顾〗",text:"不是那种一次性服务，之后也会提醒复查。感觉是长期照顾眼睛的地方。"},
+{title:"〖Long-term Care〗",text:"It’s not a one-time service. They follow up and remind for check-ups. Feels like a place for long-term eye care."}
 
 ];
 
-/* ===== Random selector ===== */
 
-function pickRandom(arr,count){
-return arr.sort(()=>Math.random()-0.5).slice(0,count);
+/* ===== RANDOM 8 REVIEWS ===== */
+
+function shuffle(array){
+for(let i=array.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1));
+[array[i],array[j]]=[array[j],array[i]];
+}
+return array;
 }
 
-/* 4 Chinese + 4 English */
-const selected=[
-...pickRandom(chineseReviews,4),
-...pickRandom(englishReviews,4)
-];
-
-/* shuffle final order */
-selected.sort(()=>Math.random()-0.5);
+const selected=shuffle([...reviews]).slice(0,8);
 
 const container=document.getElementById("reviews");
 
@@ -144,24 +140,22 @@ const box=document.createElement("div");
 box.className="review-box";
 
 box.innerHTML=`
-<div class="title">${r.title}</div>
-<div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="review-header">
+<div>${r.title}</div>
+<button class="copy-btn">〖COPY〗</button>
+</div>
+<div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
 <div>${r.text}</div>
-<button class="copy-btn">COPY</button>
 `;
 
 box.querySelector("button").onclick=()=>{
 
 navigator.clipboard.writeText(r.text);
 
-const toast=document.getElementById("toast");
-toast.style.display="block";
+document.getElementById("toast").style.display="block";
 
-setTimeout(()=>{
-toast.style.display="none";
-window.open(reviewLink,"_blank");
-},900);
-
+/* 立即跳转 */
+window.location.href=reviewLink;
 };
 
 container.appendChild(box);
