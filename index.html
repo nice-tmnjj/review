@@ -7,12 +7,12 @@
 <title>Nice Vision Review</title>
 
 <style>
+
 body{
   font-family: Arial, sans-serif;
-  background:#ffffff;
-  padding:20px;
   max-width:700px;
   margin:auto;
+  padding:20px;
 }
 
 h2{
@@ -27,29 +27,29 @@ h2{
   margin-bottom:18px;
 }
 
-.review-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.review-title{
   font-weight:bold;
-}
-
-.copy-btn{
-  background:#004ea2;
-  color:white;
-  border:none;
-  padding:6px 12px;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.copy-btn:active{
-  transform:scale(0.95);
+  font-size:16px;
 }
 
 .stars{
   margin:6px 0;
+}
+
+.review-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.copy-btn{
+  background:#004ea2;
+  color:#ffffff;
+  border:none;
+  padding:6px 14px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .notice{
@@ -57,8 +57,9 @@ h2{
   color:green;
   font-weight:bold;
   display:none;
-  margin-top:10px;
+  margin-top:15px;
 }
+
 </style>
 </head>
 
@@ -78,129 +79,27 @@ Choose a template → Copy & Paste → Post Your Google Review
 
 <script>
 
-/* ⭐⭐⭐⭐⭐ GOOGLE REVIEW LINK ⭐⭐⭐⭐⭐ */
+/* ⭐ 改成你的 Google Review Link */
 const reviewLink =
 "https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review";
 
 
-/* ===============================
-   ALL REVIEWS (60 TOTAL)
-   =============================== */
+/* =========================
+   REVIEW DATABASE
+   title = 显示
+   text  = 被复制
+========================= */
 
 const reviews = [
 
-/* ---------- 原本 Review 1-20（示例保留结构） ---------- */
-/* 你原本的20条已默认存在，这里继续新增 */
-
-/* ===== 渐进镜系列 ===== */
-
-"之前试过几次渐进镜都不习惯，这次在这里配终于成功了，看远看近都很舒服 👍",
-"I tried progressive lenses before but couldn’t adapt. This time finally works well, vision is comfortable for both far and near 👍",
-
-"以前戴渐进镜会头晕，这副完全不会，走路也很自然，很满意",
-"I used to feel dizzy with progressive lenses, but this pair feels natural even when walking. Very satisfied",
-
-"验光师很专业，会帮你慢慢调整，不是随便配的，戴起来真的差很多",
-"The optometrist adjusted everything carefully, not just a simple fitting. Big difference in comfort",
-
-"平时要看电脑，这副渐进镜很清楚，不会累眼，工作轻松很多 👍",
-"I use computer a lot, and this progressive lens is very clear and comfortable. Much less eye strain 👍",
-
-"老花之后一直很困扰，这副渐进镜真的帮到我，不用一直换眼镜了",
-"Presbyopia was very troublesome, but this progressive lens really helps. No need to switch glasses anymore",
-
-"他们很有耐心教我怎么适应渐进镜，不会不耐烦，这点很加分 👍",
-"They patiently guided me on how to adapt to progressive lenses. Very supportive 👍",
-
-"在别的地方配过两次都失败，这次终于成功，真的有差",
-"I failed twice elsewhere with progressive lenses, but this time it finally works. Big difference",
-
-"现在一副眼镜就可以看远看近，很方便，不用一直拿下来 👍",
-"Now I can see both far and near with one pair. Very convenient 👍",
-
-"视野很清楚，转换也很顺，不会有那种晕晕的感觉，很舒服",
-"Vision is clear and transition is smooth, no dizziness at all. Very comfortable",
-
-"如果你一直不敢戴渐进镜，可以来这里试，真的会不一样 👍",
-"If you’re hesitant about progressive lenses, you can try here. It really makes a difference 👍",
-
-/* ===== 儿童视力管理系列 ===== */
-
-"我们是从新加坡特地过来的，朋友介绍这里做儿童视力管理很专业。验光真的很仔细，小朋友也很配合 👍",
-"We came all the way from Singapore after a friend’s recommendation. Very professional kids eye care, and the check was very detailed 👍",
-
-"孩子用了 Stellest 一段时间，度数控制得不错，家长真的会比较安心 👀",
-"My child has been using Stellest lenses for some time, and the progression is well controlled. Feel much more at ease 👀",
-
-"验光师解释得很清楚，不只是配眼镜，还会教我们怎么帮孩子保护视力，很用心 ❤️",
-"The optometrist explained everything clearly, not just glasses but also how to care for my child’s vision ❤️",
-
-"我孩子平时很怕检查，这里整个过程很温柔，小朋友不会紧张 👍",
-"My child is usually scared of eye checks, but here the process was gentle and comfortable 👍",
-
-"可以感觉到他们是专做儿童视力管理的，不是普通眼镜店，很放心把孩子交给他们",
-"You can tell they specialize in children’s vision care, not just a normal optical shop. Very trustworthy",
-
-"虽然要从新加坡过来，但整体体验真的值得，服务和专业都很好 👍",
-"Even though we need to travel from Singapore, it’s worth it. Service and professionalism are excellent 👍",
-
-"配了眼镜之后还有持续跟进，提醒复查，很负责任的儿童视力中心",
-"They provide follow-up and reminders for check-ups. Very responsible kids vision care centre",
-
-"孩子之前度数一直加，现在有慢下来，真的很感恩找到这里 🙏",
-"My child’s degree was increasing fast before, now it has slowed down. Really thankful we found this place 🙏",
-
-"作为家长最重要是安心，这里每个步骤都有解释，很有信心继续在这里做视力管理",
-"As a parent, peace of mind is most important. Everything is well explained, confident to continue here",
-
-"如果在新加坡找不到合适的儿童视力管理，这里真的可以考虑，专业又有耐心 👍",
-"If you can’t find suitable kids vision care in Singapore, this place is worth considering. Very professional and patient 👍"
-
-];
-
-
-/* ===============================
-   RANDOM 8 REVIEWS
-   =============================== */
-
-function shuffle(array){
-  return array.sort(()=>Math.random()-0.5);
-}
-
-const selected = shuffle([...reviews]).slice(0,8);
-
-const container=document.getElementById("reviews");
-
-selected.forEach(text=>{
-
-  const box=document.createElement("div");
-  box.className="review-box";
-
-  box.innerHTML=`
-    <div class="review-header">
-      <div>⭐⭐⭐⭐⭐</div>
-      <button class="copy-btn">Copy</button>
-    </div>
-    <div style="margin-top:8px">${text}</div>
-  `;
-
-  const btn=box.querySelector(".copy-btn");
-
-  btn.onclick=async()=>{
-    await navigator.clipboard.writeText(text);
-
-    document.getElementById("notice").style.display="block";
-
-    setTimeout(()=>{
-      window.location.href=reviewLink;
-    },700);
-  };
-
-  container.appendChild(box);
-
-});
-
-</script>
-
-</body>
-</html>
+{
+title:"〖终于适应款〗",
+text:"之前试过几次渐进镜都不习惯，这次在这里配终于成功了，看远看近都很舒服 👍"
+},
+{
+title:"〖Adapted Successfully〗",
+text:"I tried progressive lenses before but couldn’t adapt. This time finally works well, vision is comfortable for both far and near 👍"
+},
+{
+title:"〖不头晕款〗",
+text:"以前戴渐进镜会头晕，这副完全不会，走路也很
