@@ -102,4 +102,124 @@ text:"I tried progressive lenses before but couldn’t adapt. This time finally 
 },
 {
 title:"〖不头晕款〗",
-text:"以前戴渐进镜会头晕，这副完全不会，走路也很
+text:"以前戴渐进镜会头晕，这副完全不会，走路也很自然，很满意"
+},
+{
+title:"〖No More Dizziness〗",
+text:"I used to feel dizzy with progressive lenses, but this pair feels natural even when walking. Very satisfied"
+},
+{
+title:"〖专业调整款〗",
+text:"验光师很专业，会帮你慢慢调整，不是随便配的，戴起来真的差很多"
+},
+{
+title:"〖Professional Adjustment〗",
+text:"The optometrist adjusted everything carefully, not just a simple fitting. Big difference in comfort"
+},
+{
+title:"〖看电脑舒服款〗",
+text:"平时要看电脑，这副渐进镜很清楚，不会累眼，工作轻松很多 👍"
+},
+{
+title:"〖Computer Friendly〗",
+text:"I use computer a lot, and this progressive lens is very clear and comfortable. Much less eye strain 👍"
+},
+{
+title:"〖老花救星款〗",
+text:"老花之后一直很困扰，这副渐进镜真的帮到我，不用一直换眼镜了"
+},
+{
+title:"〖Presbyopia Saver〗",
+text:"Presbyopia was very troublesome, but this progressive lens really helps. No need to switch glasses anymore"
+},
+{
+title:"〖服务耐心款〗",
+text:"他们很有耐心教我怎么适应渐进镜，不会不耐烦，这点很加分 👍"
+},
+{
+title:"〖Patient Guidance〗",
+text:"They patiently guided me on how to adapt to progressive lenses. Very supportive 👍"
+},
+{
+title:"〖多次失败后成功款〗",
+text:"在别的地方配过两次都失败，这次终于成功，真的有差"
+},
+{
+title:"〖Finally Works〗",
+text:"I failed twice elsewhere with progressive lenses, but this time it finally works. Big difference"
+},
+{
+title:"〖生活方便款〗",
+text:"现在一副眼镜就可以看远看近，很方便，不用一直拿下来 👍"
+},
+{
+title:"〖Convenient Vision〗",
+text:"Now I can see both far and near with one pair. Very convenient 👍"
+},
+{
+title:"〖视觉清晰款〗",
+text:"视野很清楚，转换也很顺，不会有那种晕晕的感觉，很舒服"
+},
+{
+title:"〖Clear Vision〗",
+text:"Vision is clear and transition is smooth, no dizziness at all. Very comfortable"
+},
+{
+title:"〖强烈推荐款〗",
+text:"如果你一直不敢戴渐进镜，可以来这里试，真的会不一样 👍"
+},
+{
+title:"〖Highly Recommended〗",
+text:"If you’re hesitant about progressive lenses, you can try here. It really makes a difference 👍"
+}
+
+];
+
+
+/* =========================
+   RANDOM SHOW 8
+========================= */
+
+function shuffle(arr){
+  return arr.sort(()=>Math.random()-0.5);
+}
+
+const selected = shuffle([...reviews]).slice(0,8);
+
+const container=document.getElementById("reviews");
+
+selected.forEach(r=>{
+
+  const box=document.createElement("div");
+  box.className="review-box";
+
+  box.innerHTML=`
+    <div class="review-header">
+        <div class="review-title">${r.title}</div>
+        <button class="copy-btn">Copy</button>
+    </div>
+
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+
+    <div>${r.text}</div>
+  `;
+
+  const btn=box.querySelector(".copy-btn");
+
+  btn.onclick=async()=>{
+    await navigator.clipboard.writeText(r.text);
+
+    document.getElementById("notice").style.display="block";
+
+    setTimeout(()=>{
+      window.location.href=reviewLink;
+    },700);
+  };
+
+  container.appendChild(box);
+});
+
+</script>
+
+</body>
+</html>
