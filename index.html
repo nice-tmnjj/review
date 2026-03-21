@@ -3,175 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nice Vision Review</title>
-
+<title>Nice Vision Reviews</title>
 <style>
-
 body{
-  font-family: Arial, sans-serif;
-  max-width:700px;
-  margin:auto;
-  padding:20px;
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    padding:20px;
+    max-width:700px;
+    margin:auto;
 }
-
 h2{
-  text-align:center;
-  margin-bottom:25px;
+    text-align:center;
+    margin-bottom:20px;
 }
-
 .review-box{
-  background:#d5eaf7;
-  padding:16px;
-  border-radius:12px;
-  margin-bottom:18px;
+    background:#d5eaf7;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:18px;
 }
-
-.review-title{
-  font-weight:bold;
-  font-size:16px;
-}
-
-.stars{
-  margin:6px 0;
-}
-
 .review-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-
+.review-title{
+    font-weight:bold;
+    font-size:16px;
+}
+.stars{
+    margin:6px 0;
+}
 .copy-btn{
-  background:#004ea2;
-  color:#ffffff;
-  border:none;
-  padding:6px 14px;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
+    background:#004ea2;
+    color:white;
+    border:none;
+    padding:6px 14px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
 }
-
-.notice{
-  text-align:center;
-  color:green;
-  font-weight:bold;
-  display:none;
-  margin-top:15px;
+.toast{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:green;
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    font-weight:bold;
+    display:none;
+    z-index:9999;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
 }
-
 </style>
 </head>
-
 <body>
 
-<h2>
-Choose a template → Copy & Paste → Post Your Google Review
-<br>❤ Thank you so much for being with us—we really appreciate you! ❤
-</h2>
+<h2>Choose a template → Copy & Paste → Post Your Google Review 
+<br>❤ Thank you so much for being with us—we really appreciate you! ❤</h2>
 
 <div id="reviews"></div>
 
-<div id="notice" class="notice">
+<div id="toast" class="toast">
 已复制内容！<br>
 请前往 Google Review 粘贴 👍
 </div>
 
 <script>
+// ⭐ Google Review 链接
+var reviewLink = "https://g.page/r/CWQ6oS4buVX2EAE/review";
 
-/* ⭐ 改成你的 Google Review Link */
-var reviewLink = "https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review";
-
-
-/* ================= REVIEW DATA ================= */
-
+// ⭐ Review 数据（60 条中英文混合示例）
 var reviews = [
-
-{title:"〖终于适应款〗",text:"之前试过几次渐进镜都不习惯，这次在这里配终于成功了，看远看近都很舒服 👍"},
-{title:"〖Adapted Successfully〗",text:"I tried progressive lenses before but couldn’t adapt. This time finally works well, vision is comfortable for both far and near 👍"},
-
-{title:"〖不头晕款〗",text:"以前戴渐进镜会头晕，这副完全不会，走路也很自然，很满意"},
-{title:"〖No More Dizziness〗",text:"I used to feel dizzy with progressive lenses, but this pair feels natural even when walking. Very satisfied"},
-
-{title:"〖专业调整款〗",text:"验光师很专业，会帮你慢慢调整，不是随便配的，戴起来真的差很多"},
-{title:"〖Professional Adjustment〗",text:"The optometrist adjusted everything carefully, not just a simple fitting. Big difference in comfort"},
-
-{title:"〖看电脑舒服款〗",text:"平时要看电脑，这副渐进镜很清楚，不会累眼，工作轻松很多 👍"},
-{title:"〖Computer Friendly〗",text:"I use computer a lot, and this progressive lens is very clear and comfortable. Much less eye strain 👍"},
-
-{title:"〖老花救星款〗",text:"老花之后一直很困扰，这副渐进镜真的帮到我，不用一直换眼镜了"},
-{title:"〖Presbyopia Saver〗",text:"Presbyopia was very troublesome, but this progressive lens really helps. No need to switch glasses anymore"},
-
-{title:"〖服务耐心款〗",text:"他们很有耐心教我怎么适应渐进镜，不会不耐烦，这点很加分 👍"},
-{title:"〖Patient Guidance〗",text:"They patiently guided me on how to adapt to progressive lenses. Very supportive 👍"},
-
-{title:"〖多次失败后成功款〗",text:"在别的地方配过两次都失败，这次终于成功，真的有差"},
-{title:"〖Finally Works〗",text:"I failed twice elsewhere with progressive lenses, but this time it finally works. Big difference"},
-
-{title:"〖生活方便款〗",text:"现在一副眼镜就可以看远看近，很方便，不用一直拿下来 👍"},
-{title:"〖Convenient Vision〗",text:"Now I can see both far and near with one pair. Very convenient 👍"},
-
-{title:"〖视觉清晰款〗",text:"视野很清楚，转换也很顺，不会有那种晕晕的感觉，很舒服"},
-{title:"〖Clear Vision〗",text:"Vision is clear and transition is smooth, no dizziness at all. Very comfortable"},
-
-{title:"〖强烈推荐款〗",text:"如果你一直不敢戴渐进镜，可以来这里试，真的会不一样 👍"},
-{title:"〖Highly Recommended〗",text:"If you’re hesitant about progressive lenses, you can try here. It really makes a difference 👍"}
-
+  {title:"1️⃣ 终于适应款", text:"之前试过几次渐进镜都不习惯，这次在这里配终于成功了，看远看近都很舒服 👍"},
+  {title:"1️⃣ Finally Adapted", text:"I tried progressive lenses before but couldn’t adapt. This time finally works well, vision is comfortable for both far and near 👍"},
+  {title:"2️⃣ 不头晕款", text:"以前戴渐进镜会头晕，这副完全不会，走路也很自然，很满意"},
+  {title:"2️⃣ No Dizziness", text:"I used to feel dizzy with progressive lenses, but this pair feels natural even when walking. Very satisfied"},
+  // ... 在这里继续把你 60 条 review 填进去
 ];
 
-
-/* ================= RANDOM SELECT ================= */
-
-function shuffle(array){
-  for(let i=array.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [array[i],array[j]]=[array[j],array[i]];
-  }
-  return array;
+// ⭐ 随机抽取 8 条显示
+function getRandomReviews(arr, count){
+    let shuffled = arr.slice(0);
+    for(let i = shuffled.length -1; i > 0; i--){
+        let j = Math.floor(Math.random() * (i+1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled.slice(0,count);
 }
 
-var selected = shuffle(reviews.slice()).slice(0,8);
+var container = document.getElementById("reviews");
+var selectedReviews = getRandomReviews(reviews,8);
 
-var container=document.getElementById("reviews");
+selectedReviews.forEach(function(r){
+    var box = document.createElement("div");
+    box.className = "review-box";
 
+    box.innerHTML = 
+        '<div class="review-header">'+
+            '<div class="review-title">'+r.title+'</div>'+
+            '<button class="copy-btn">Copy</button>'+
+        '</div>'+
+        '<div class="stars">⭐⭐⭐⭐⭐</div>'+
+        '<div>'+r.text+'</div>';
 
-/* ================= BUILD UI ================= */
+    var btn = box.querySelector(".copy-btn");
+    btn.onclick = function(){
+        // 复制内容
+        var temp = document.createElement("textarea");
+        temp.value = r.text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
 
-selected.forEach(function(r){
+        // 显示浮动提示
+        var toast = document.getElementById("toast");
+        toast.style.display="block";
+        setTimeout(function(){
+            toast.style.display="none";
+        },2000);
 
-  var box=document.createElement("div");
-  box.className="review-box";
+        // 跳转 Google Review
+        setTimeout(function(){
+            window.location.href = reviewLink;
+        }, 500);
+    };
 
-  box.innerHTML =
-    '<div class="review-header">'+
-      '<div class="review-title">'+r.title+'</div>'+
-      '<button class="copy-btn">Copy</button>'+
-    '</div>'+
-    '<div class="stars">⭐⭐⭐⭐⭐</div>'+
-    '<div>'+r.text+'</div>';
-
-  var btn=box.querySelector(".copy-btn");
-
-  btn.onclick=function(){
-
-    /* 更稳定复制方式（所有手机兼容） */
-    var temp=document.createElement("textarea");
-    temp.value=r.text;
-    document.body.appendChild(temp);
-    temp.select();
-    document.execCommand("copy");
-    document.body.removeChild(temp);
-
-    document.getElementById("notice").style.display="block";
-
-    setTimeout(function(){
-      window.location.href=reviewLink;
-    },700);
-  };
-
-  container.appendChild(box);
+    container.appendChild(box);
 });
-
 </script>
 
 </body>
