@@ -4,104 +4,262 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Review Page</title>
+
 <style>
-body{font-family:Arial,sans-serif;background:#f0f4f8;padding:20px;}
-.review-box{background:#d5eaf7;padding:15px;margin:10px 0;border-radius:8px;position:relative;}
-.copy-btn{position:absolute;top:15px;right:15px;background:#004ea2;color:#fff;font-weight:bold;border:none;padding:5px 10px;cursor:pointer;border-radius:4px;}
-.copy-msg{color:green;margin-top:5px;font-size:0.9em;display:none;}
-.title{font-weight:bold;margin-bottom:5px;}
-.star{color:gold;margin-bottom:10px;}
+body{
+  font-family:Arial,sans-serif;
+  background:#f0f4f8;
+  padding:20px;
+}
+
+.review-box{
+  background:#d5eaf7;
+  padding:15px;
+  margin:12px 0;
+  border-radius:10px;
+  position:relative;
+}
+
+.copy-btn{
+  position:absolute;
+  top:15px;
+  right:15px;
+  background:#004ea2;
+  color:white;
+  font-weight:bold;
+  border:none;
+  padding:7px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.copy-btn:hover{
+  opacity:0.9;
+}
+
+.title{
+  font-weight:bold;
+  font-size:18px;
+  margin-bottom:6px;
+}
+
+.star{
+  color:#ffb400;
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.text{
+  line-height:1.6;
+}
+
+.copy-msg{
+  color:green;
+  font-size:14px;
+  margin-top:8px;
+  display:none;
+}
 </style>
 </head>
+
 <body>
-<h2>Choose a template → Copy & Paste → Post Your Google Review <br>❤ Thank you so much for being with us—we really appreciate you! ❤ </h2>
+
+<h2>
+Choose a template → Copy & Paste → Post Your Google Review
+<br><br>
+❤ Thank you so much for being with us — we truly appreciate your support ❤
+</h2>
+
 <div id="reviews-container"></div>
+
 <script>
-const googleReviewURL="https://g.page/r/CWQ6oS4buVX2EAE/review";
-const reviews=[
-{title:"终于适应款",text:"之前试过几次渐进镜都不习惯，这次在这里配终于成功了，看远看近都很舒服 👍"},
-{title:"Finally Adapted",text:"I tried progressive lenses before but couldn’t adapt. This time finally works well, vision is comfortable for both far and near 👍"},
-{title:"不头晕款",text:"以前戴渐进镜会头晕，这副完全不会，走路也很自然，很满意"},
-{title:"No Dizziness",text:"I used to feel dizzy with progressive lenses, but this pair feels natural even when walking. Very satisfied"},
-{title:"专业调整款",text:"验光师很专业，会帮你慢慢调整，不是随便配的，戴起来真的差很多"},
-{title:"Professional Adjustment",text:"The optometrist adjusted everything carefully, not just a simple fitting. Big difference in comfort"},
-{title:"看电脑舒服款",text:"平时要看电脑，这副渐进镜很清楚，不会累眼，工作轻松很多 👍"},
-{title:"Comfortable for Computer",text:"I use computer a lot, and this progressive lens is very clear and comfortable. Much less eye strain 👍"},
-{title:"老花救星款",text:"老花之后一直很困扰，这副渐进镜真的帮到我，不用一直换眼镜了"},
-{title:"Presbyopia Savior",text:"Presbyopia was very troublesome, but this progressive lens really helps. No need to switch glasses anymore"},
-{title:"服务耐心款",text:"他们很有耐心教我怎么适应渐进镜，不会不耐烦，这点很加分 👍"},
-{title:"Patient Service",text:"They patiently guided me on how to adapt to progressive lenses. Very supportive 👍"},
-{title:"多次失败后成功款",text:"在别的地方配过两次都失败，这次终于成功，真的有差"},
-{title:"Success After Failures",text:"I failed twice elsewhere with progressive lenses, but this time it finally works. Big difference"},
-{title:"生活方便款",text:"现在一副眼镜就可以看远看近，很方便，不用一直拿下来 👍"},
-{title:"Convenient Vision",text:"Now I can see both far and near with one pair. Very convenient 👍"},
-{title:"视觉清晰款",text:"视野很清楚，转换也很顺，不会有那种晕晕的感觉，很舒服"},
-{title:"Clear Vision",text:"Vision is clear and transition is smooth, no dizziness at all. Very comfortable"},
-{title:"强烈推荐款",text:"如果你一直不敢戴渐进镜，可以来这里试，真的会不一样 👍"},
-{title:"Highly Recommended",text:"If you’re hesitant about progressive lenses, you can try here. It really makes a difference 👍"},
-{title:"新加坡特地过来",text:"我们是从新加坡特地过来的，朋友介绍这里做儿童视力管理很专业。验光真的很仔细，小朋友也很配合 👍"},
-{title:"Came from Singapore",text:"We came all the way from Singapore after a friend’s recommendation. Very professional kids eye care, and the check was very detailed 👍"},
-{title:"Stellest 控制度数",text:"孩子用了 Stellest 一段时间，度数控制得不错，家长真的会比较安心 👀"},
-{title:"Stellest Progress Good",text:"My child has been using Stellest lenses for some time, and the progression is well controlled. Feel much more at ease 👀"},
-{title:"用心教护眼",text:"验光师解释得很清楚，不只是配眼镜，还会教我们怎么帮孩子保护视力，很用心 ❤️"},
-{title:"Careful Explanation",text:"The optometrist explained everything clearly, not just glasses but also how to care for my child’s vision ❤️"},
-{title:"温柔检查",text:"我孩子平时很怕检查，这里整个过程很温柔，小朋友不会紧张 👍"},
-{title:"Gentle Check",text:"My child is usually scared of eye checks, but here the process was gentle and comfortable 👍"},
-{title:"专业儿童中心",text:"可以感觉到他们是专做儿童视力管理的，不是普通眼镜店，很放心把孩子交给他们"},
-{title:"Trusted Kids Vision Care",text:"You can tell they specialize in children’s vision care, not just a normal optical shop. Very trustworthy"},
-{title:"路途虽远值得",text:"虽然要从新加坡过来，但整体体验真的值得，服务和专业都很好 👍"},
-{title:"Worth the Trip",text:"Even though we need to travel from Singapore, it’s worth it. Service and professionalism are excellent 👍"},
-{title:"持续跟进",text:"配了眼镜之后还有持续跟进，提醒复查，很负责任的儿童视力中心"},
-{title:"Follow-up Care",text:"They provide follow-up and reminders for check-ups. Very responsible kids vision care centre"},
-{title:"度数减慢感恩",text:"孩子之前度数一直加，现在有慢下来，真的很感恩找到这里 🙏"},
-{title:"Degree Slowed Down",text:"My child’s degree was increasing fast before, now it has slowed down. Really thankful we found this place 🙏"},
-{title:"家长安心",text:"作为家长最重要是安心，这里每个步骤都有解释，很有信心继续在这里做视力管理"},
-{title:"Peace of Mind",text:"As a parent, peace of mind is most important. Everything is well explained, confident to continue here"},
-{title:"新加坡可参考",text:"如果在新加坡找不到合适的儿童视力管理，这里真的可以考虑，专业又有耐心 👍"},
-{title:"Worth Considering",text:"If you can’t find suitable kids vision care in Singapore, this place is worth considering. Very professional and patient 👍"},
-{title:"老字号，专业",text:"20多年老店果然不一样，验光超级专业，服务温柔，让人超放心！"},
-{title:"Old Shop, Professional",text:"A 20+ year optical shop — truly experienced and trustworthy! Very professional eye check!"},
-{title:"镜框超多",text:"镜框新款真的很多，选择多到眼花🤣 最后买到一副超喜欢的！"},
-{title:"Many Frames",text:"So many new frame designs! Spoiled with choices 🤣 Found one I absolutely love!"},
-{title:"小孩验光",text:"小孩验光过程很细心，Stellest 镜片讲解清楚，用心到我很安心。"},
-{title:"Kids Eye Check",text:"Super patient with my child. Stellest explained clearly and my kid feels comfortable wearing it."},
-{title:"正品牌",text:"全部都是正品牌的镜片和镜框，品质很好，戴着超清晰。"},
-{title:"Genuine Brands",text:"All frames and lenses are original brands. Quality feels solid & vision super clear!"},
-{title:"服务温柔",text:"小姐姐们讲话很温柔，解释也很清楚，整个过程很舒服。"},
-{title:"Sweet Service",text:"Staff are so gentle and friendly. Explains everything clearly. Love the vibe here!"},
-{title:"专业推荐",text:"推荐很专业，不 hard sell，帮我找到最适合的镜框，真的贴心！"},
-{title:"Pro Recommendations",text:"No hard selling. They recommended what truly suits me. Very thoughtful!"},
-{title:"环境舒服",text:"店里环境舒适干净，来配眼镜心情很好。"},
-{title:"Comfy Environment",text:"Clean, cozy and comfortable shop. Makes the whole experience pleasant."},
-{title:"Stellest很棒",text:"孩子戴 Stellest 很习惯，度数也稳定下来，真的很感谢 Nice Vision。"},
-{title:"Stellest Works!",text:"My child’s vision is now stable with Stellest. Really grateful for their care!"},
-{title:"回头客",text:"我从学生配到现在上班，这家店始终如一地专业，用心又可靠！"},
-{title:"Loyal Customer",text:"I’ve been coming here for years — still my most trusted optical shop!"},
-{title:"性价比高",text:"镜框品质好、服务好、价格合理，真的很值得推荐给朋友！"},
-{title:"Value for Money",text:"Good quality, honest pricing and excellent service. Highly recommend!"},
-{title:"专业验光 细心Pro Eye Check",text:"验光师特别细心，每一步都解释得很清楚，真的感觉到我的视力被好好照顾。"},
-{title:"Pro Eye Check",text:"The optometrist was super detailed and gentle. Every step was explained clearly — I can really feel my eyes were well taken care of."},
-{title:"视力改善 Vision Improved",text:"验光很准确，配出来的度数刚刚好，看东西瞬间变清楚，真的谢谢你们！"},
-{title:"Clear Vision",text:"The eye test was very accurate, and my new glasses feel perfect. Everything looks clearer instantly — thank you so much!"},
-{title:"用心照顾 Caring & Careful",text:"从验光到选镜框都很用心，让我觉得自己的眼睛被认真对待，超感动。"},
-{title:"Caring & Careful",text:"From eye check to choosing frames, they were so caring and patient. Really felt my eyes were treated with love and attention."}
+
+const googleReviewURL = "https://g.page/r/CWQ6oS4buVX2EAE/review";
+
+const reviews = [
+
+{
+title:"眼睛更放松",
+text:"平时工作长时间看电脑，加上常常开会，眼睛很容易累。这里不是随便帮你配一副眼镜，而是真的会了解你的使用习惯，再帮你调整适合的镜片。戴了之后，整个人轻松很多。"
+},
+
+{
+title:"Eyes Feel More Relaxed",
+text:"I spend long hours on computer and meetings every day. Here, they don’t just sell you glasses — they really understand your lifestyle before recommending lenses. After wearing it, my eyes feel much more relaxed"
+},
+
+{
+title:"高品质",
+text:"环境、服务、专业度都跟一般眼镜店不一样。最重要是不会一直 push 你买贵的，而是真的根据你需要来建议，很舒服。"
+},
+
+{
+title:"High Quality Experience",
+text:"The environment, service, and professionalism feel very different from a typical optical shop. Most importantly, they don’t push expensive products unnecessarily. Recommendations are truely based on your needs"
+},
+
+{
+title:"长期照顾",
+text:"最喜欢的是他们不是卖完就结束，还会 follow up 我的佩戴情况。现在很少有这种会长期照顾顾客的店了。"
+},
+
+{
+title:"Long-Term Care",
+text:"What I appreciate most is they don’t disappear after the sale. They actually follow up on how the glasses are working for me. Rare to find this kind of long-term care nowadays"
+},
+
+{
+title:"跨境客户",
+text:"原本以为跨境配眼镜会比较麻烦，结果整个流程比想象中顺很多。验光很细，也很愿意花时间解释，完全不会 rush。难怪很多朋友会特别过来。"
+},
+
+{
+title:"Cross-Border Experience",
+text:"I thought making glasses across the border would be troublesome, but the whole process was surprisingly smooth. The eye test was detailed and everything was explained patiently without rushing. No wonder many people come specially."
+},
+
+{
+title:"不喜欢 Hard Sell",
+text:"现在很多店一进去就一直推 upgrade，这里反而会先听你的需求，再慢慢建议，压力感很低，体验很好。"
+},
+
+{
+title:"No Hard Selling",
+text:"Nowadays many shops push upgrades immediately, but here they listen to your needs first before recommending anything. Very low pressure and a pleasant experience."
+},
+
+{
+title:"多焦点真实体验",
+text:"以前开始老花后，最烦就是一直找眼镜。现在终于可以一副解决，看菜单、手机、开车都很方便，生活品质真的差很多。"
+},
+
+{
+title:"Real Progressive Lens Experience",
+text:"After presbyopia started, constantly searching for glasses became very frustrating. Now one pair solves everything — menu, phone, driving. Quality of life improved a lot."
+},
+
+{
+title:"小孩配眼镜",
+text:"带孩子来最重要是安心。这里会解释为什么近视越来越深，也会教孩子平时怎么保护眼睛，不只是卖镜片而已。"
+},
+
+{
+title:"Kids Eye Care",
+text:"As a parent, reassurance matters most. They explain why myopia progresses and teach kids how to take care of their eyes, not just selling lenses."
+},
+
+{
+title:"夜驾高级体验",
+text:"以前晚上开车看到对面车灯会很辛苦，现在舒服很多。原来镜片真的会影响驾驶体验。"
+},
+
+{
+title:"Better Night Driving",
+text:"Driving at night used to be very uncomfortable because of glare. Now it feels much better. Didn’t realise lenses could affect driving experience this much."
+},
+
+{
+title:"审美 + 专业",
+text:"这里选镜框不会只是看流行，还会帮你看脸型、职业、气质，戴出来真的比较有精神。"
+},
+
+{
+title:"Style + Professional Advice",
+text:"They don’t just follow trends when choosing frames. They consider your face shape, profession, and overall style. The final result really looks better."
+},
+
+{
+title:"解决问题",
+text:"我来了之后才发现，很多时候不是眼镜不好，而是之前根本没有验对。这里会很仔细找出真正问题。"
+},
+
+{
+title:"Finding The Real Problem",
+text:"After coming here, I realised the issue wasn’t the glasses themselves — previous prescriptions simply weren’t accurate. They really take time to identify the real problem."
+},
+
+{
+title:"信任感",
+text:"现在愿意介绍家人朋友过来，因为知道这里不会乱来。那种安心感，比便宜更重要。"
+},
+
+{
+title:"Trust & Confidence",
+text:"Now I confidently recommend this place to family and friends because I know they won’t simply hard sell or compromise quality. That peace of mind matters more than cheap pricing."
+},
+
+{
+title:"舒服、精准、售后",
+text:"年轻时配眼镜只看价格，现在才明白，舒服、精准、售后，其实更重要。"
+},
+
+{
+title:"Comfort, Accuracy & After-Sales",
+text:"When I was younger, I only cared about price. Now I realise comfort, accuracy, and after-sales service matter much more."
+}
+
 ];
 
-function getRandomReviews(arr,count){return arr.slice().sort(()=>0.5-Math.random()).slice(0,count);}
+function getRandomReviews(arr,count){
+  return arr
+    .slice()
+    .sort(()=>0.5-Math.random())
+    .slice(0,count);
+}
+
 function renderReviews(){
-const container=document.getElementById("reviews-container");
-container.innerHTML="";
-const selected=getRandomReviews(reviews,8);
-selected.forEach(rev=>{
-const div=document.createElement("div");
-div.className="review-box";
-div.innerHTML=`<div class="title">${rev.title}</div><div class="star">⭐️⭐️⭐️⭐️⭐️</div><div class="text">${rev.text}</div><button class="copy-btn">Copy</button><div class="copy-msg">已复制内容！<br>请前往 Google Review 粘贴 👍</div>`;
-container.appendChild(div);
-const copyBtn=div.querySelector(".copy-btn");
-const copyMsg=div.querySelector(".copy-msg");
-copyBtn.addEventListener("click",()=>{navigator.clipboard.writeText(rev.text).then(()=>{copyMsg.style.display="block";setTimeout(()=>{copyMsg.style.display="none";},3000);window.open(googleReviewURL,"_blank");});});
-});}
+
+  const container = document.getElementById("reviews-container");
+  container.innerHTML = "";
+
+  const selected = getRandomReviews(reviews,8);
+
+  selected.forEach(rev=>{
+
+    const div = document.createElement("div");
+
+    div.className = "review-box";
+
+    div.innerHTML = `
+      <div class="title">${rev.title}</div>
+      <div class="star">⭐️⭐️⭐️⭐️⭐️</div>
+      <div class="text">${rev.text}</div>
+
+      <button class="copy-btn">Copy</button>
+
+      <div class="copy-msg">
+      Copied successfully! Redirecting to Google Review...
+      </div>
+    `;
+
+    container.appendChild(div);
+
+    const copyBtn = div.querySelector(".copy-btn");
+    const copyMsg = div.querySelector(".copy-msg");
+
+    copyBtn.addEventListener("click",()=>{
+
+      navigator.clipboard.writeText(rev.text).then(()=>{
+
+        copyMsg.style.display="block";
+
+        setTimeout(()=>{
+          copyMsg.style.display="none";
+        },2000);
+
+        window.open(googleReviewURL,"_blank");
+
+      });
+
+    });
+
+  });
+
+}
+
 renderReviews();
+
 </script>
+
 </body>
 </html>
